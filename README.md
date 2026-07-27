@@ -9,13 +9,8 @@
 | ![Voxgig](https://www.voxgig.com/res/img/vgt01r.png) | This open source module is sponsored and supported by [Voxgig](https://www.voxgig.com). |
 |---|---|
 
-Provides access to the Webflow CMS API using the Seneca _provider_
-convention. Webflow CMS API entities are represented as Seneca entities so
-that they can be accessed using the Seneca entity API and messages.
-See [seneca-entity](senecajs/seneca-entity) and the [Seneca Data
-Entities
-Tutorial](https://senecajs.org/docs/tutorials/understanding-data-entities.html) for more details on the Seneca entity API.
-<!--
+Provides access to the Typeform API using the Seneca *provider* convention. Typeform API entities are represented as Seneca entities so that they can be accessed using the Seneca entity API and messages.
+See [seneca-entity](https://github.com/senecajs/seneca-entity) and the [Seneca Data Entities Tutorial](https://senecajs.org/docs/tutorials/understanding-data-entities.html) for more details on the Seneca entity API.
 
 ## Install
 
@@ -25,40 +20,10 @@ $ npm install @seneca/webflow-provider @seneca/env
 
 ## Quick Example
 
-<!-- ```js
-// Setup - get the key value (<SECRET>) separately from a vault or
-// environment variable.
+```js
 Seneca()
-  // Get API keys using the seneca-env plugin
-  .use('env', {
-    var: {
-      $TANGOCARD_APIKEY: String,
-      $TANGOCARD_USERTOKEN: String,
-    },
-  })
-  .use('provider', {
-    provider: {
-      tangocard: {
-        keys: {
-          apikey: { value: '$TANGOCARD_APIKEY' },
-          usertoken: { value: '$TANGOCARD_USERTOKEN' },
-        },
-      },
-    },
-  })
-  .use('tangocard-provider')
-
-let board = await seneca
-  .entity('provider/tangocard/board')
-  .load$('<tangocard-board-id>')
-
-Console.log('BOARD', board)
-
-board.desc = 'New description'
-board = await board.save$()
-
-Console.log('UPDATED BOARD', board)
-``` -->
+  .use('typeform-provider')
+```
 
 ## More Examples
 
